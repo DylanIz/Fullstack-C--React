@@ -26,9 +26,11 @@ function App() {
       setSearchResult(result.data)
     }
   }
+  //Added conditional rendering of serverError for when response is a string. For example a network error.
   return (
     <div className="App">
       <Search onClick={onClick} search={search} handleChange={handleChange} />
+      {serverError && <h1>{serverError}</h1>}
       <CardList />
     </div>
   );
