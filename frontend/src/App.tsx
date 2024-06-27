@@ -10,7 +10,7 @@ function App() {
   //<string> is explicitaly setting the type of the useState. We could of infered the state using ("")
   const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
-  const [serverError, setServerError] = useState<string>("");
+  const [serverError, setServerError] = useState<string | null>(null);
   //using onClick is the equivalent of using a event listener in JS
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -30,8 +30,8 @@ function App() {
   return (
     <div className="App">
       <Search onClick={onClick} search={search} handleChange={handleChange} />
+      <CardList searchResults={searchResult}/>
       {serverError && <h1>{serverError}</h1>}
-      <CardList />
     </div>
   );
 }
