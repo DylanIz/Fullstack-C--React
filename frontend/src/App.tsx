@@ -9,6 +9,7 @@ function App() {
   // useState is basically a get; set;
   //<string> is explicitaly setting the type of the useState. We could of infered the state using ("")
   const [search, setSearch] = useState<string>("");
+  const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
   //using onClick is the equivalent of using a event listener in JS
