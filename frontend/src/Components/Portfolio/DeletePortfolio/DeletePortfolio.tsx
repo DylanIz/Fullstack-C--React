@@ -2,14 +2,14 @@ import React, { SyntheticEvent } from "react";
 
 interface Props {
   onPortfolioDelete: (e: SyntheticEvent) => void;
-  porfolioValue: string;
+  portfolioValue: string;
 }
 
-function DeletePortfolio({ onPortfolioDelete, porfolioValue }: Props) {
+function DeletePortfolio({ onPortfolioDelete, portfolioValue }: Props) {
   return (
     <div>
       <form onSubmit={onPortfolioDelete}>
-        <input hidden readOnly value={porfolioValue}></input>
+        <input hidden readOnly value={portfolioValue}></input>
         <button>Delete</button>
       </form>
     </div>
