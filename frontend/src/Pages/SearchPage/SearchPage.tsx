@@ -44,9 +44,7 @@ const SearchPage = (props: Props) => {
     }
   };
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
+    <>
       <Search
         onSearchSubmit={onSearchSubmit}
         search={search}
@@ -61,7 +59,7 @@ const SearchPage = (props: Props) => {
         onPortfolioCreate={onPortfolioCreate}
       />
       {serverError && <h1>{serverError}</h1>}
-    </div>
+    </>
   );
 };
 
