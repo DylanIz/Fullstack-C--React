@@ -20,11 +20,11 @@ const Card: React.FC<Props> = ({
       key={id}
       id={id}
     >
-      <h2 className="font-bold text-center text-veryDarkViolet md:text-left">
+      <h2 className="font-bold text-center text-black md:text-left">
         {searchResult.name} ({searchResult.symbol})
       </h2>
-      <p className="text-veryDarkBlue">{searchResult.currency}</p>
-      <p className="font-bold text-veryDarkBlue">
+      <p className="text-black">{searchResult.currency}</p>
+      <p className="font-bold text-black">
         {searchResult.exchangeShortName} - {searchResult.stockExchange}
       </p>
       <AddPortfolio
