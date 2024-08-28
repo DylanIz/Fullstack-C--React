@@ -19,7 +19,7 @@ const configs = [
 ];
 
 function Table({}: Props) {
-  const renderedRow = data.map((company) => {
+  const renderedRows = data.map((company) => {
     return (
       <tr key={company.cik}>
         {configs.map((val: any) => {
@@ -45,7 +45,10 @@ function Table({}: Props) {
   return (
     <div className="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8">
       <table>
-        <thead className=""></thead>
+        <thead className="min-w-full divide-y divide-gray-200 m-5">
+          {renderedHeaders}
+        </thead>
+        <tbody>{renderedRows}</tbody>
       </table>
     </div>
   );
