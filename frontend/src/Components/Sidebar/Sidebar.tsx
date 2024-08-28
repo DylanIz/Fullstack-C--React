@@ -21,6 +21,13 @@ function Sidebar({}: Props) {
               <FaHome />
               <h6 className="ml-3">Company Profile</h6>
             </Link>
+            <Link
+              to="income-statement"
+              className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+              <FaHome />
+              <h6 className="ml-3">Income Statement</h6>
+            </Link>
           </div>
         </div>
       </div>
