@@ -14,8 +14,16 @@ const CompanyPage = (props: Props) => {
       const result = await getCompanyProfile(ticker!);
       setCompany(result?.data[0]);
     };
-  });
-  return <div>CompanyPage</div>;
+  }, []);
+  return (
+    <>
+      {company ? (
+        <div>{company.companyName}</div>
+      ) : (
+        <div>Company not found!!</div>
+      )}
+    </>
+  );
 };
 
 export default CompanyPage;
