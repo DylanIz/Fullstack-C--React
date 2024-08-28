@@ -27,5 +27,8 @@ export const getCompanyProfile = async (query: string) => {
     const data = await axios.get<CompanyProfile[]>(
       `http://financialmodelingprop.com/api/v3/profile/${query}?apikey=${process.env.REACT_APP_API_KEY}`,
     );
-  } catch {}
+    return data;
+  } catch (error: any) {
+    throw error("Error fetching profile");
+  }
 };
