@@ -29,6 +29,6 @@ export const getCompanyProfile = async (query: string) => {
     );
     return data;
   } catch (error: any) {
-    throw error("Error fetching profile");
+    throw error("Error fetching profile: ", error.message);
   }
 };
