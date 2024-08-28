@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { CompanyProfile } from "../../company";
 import { getCompanyProfile } from "../../api";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 interface Props {}
 
@@ -20,6 +21,7 @@ const CompanyPage = (props: Props) => {
     <>
       {company ? (
         <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
+          <Sidebar />
           <div className="relative md:ml-64 bg-blueGray-100 w-full">
             <div className="relative pt-20 pb-32 bg-lightBlue-500">
               <div className="px-4 md:px-6 mx-auto w-full">
