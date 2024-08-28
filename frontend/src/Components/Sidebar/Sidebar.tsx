@@ -15,7 +15,7 @@ function Sidebar({}: Props) {
           <div className="md:flex-col md:min-w-full flex flex-col list-none">
             <Link
               to="company-profile"
-              className="flex md:min-w-full text-blueGray-500 text-medium uppercase font-bold block pt--1 pb-4 no-underline"
+              className="flex md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
             />
           </div>
         </div>
