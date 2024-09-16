@@ -21,7 +21,7 @@ const RatioList = (props: Props) => {
       <li className="py-3 sm:py-4">
         <div className="flex items-cener space-x-4">
           <div className="flex-1 min-4">
-            <p className="text-sm font-medium text-gray-900 truncate">
+            <p className="text-bold font-medium text-gray-900 truncate">
               {row.label}
             </p>
             <p className="text-sm text-gray-500 truncate">
