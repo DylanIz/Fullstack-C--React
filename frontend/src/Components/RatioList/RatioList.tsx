@@ -16,6 +16,9 @@ const config = [
 ];
 
 const RatioList = (props: Props) => {
+  const renderedRow = config.map((row) => {
+    return <li className="py-3 sm:py-4">.flex.</li>;
+  });
   return <div>RatioList</div>;
 };
 
