@@ -13,12 +13,14 @@ const CompanyPage = (props: Props) => {
   const [company, setCompany] = useState<CompanyProfile>();
 
   useEffect(() => {
+    if (!ticker) return;
+
     const getProfileInit = async () => {
       const result = await getCompanyProfile(ticker!);
       setCompany(result?.data[0]);
     };
     getProfileInit();
-  }, []);
+  }, [ticker]);
   return (
     <>
       {company ? (
