@@ -28,6 +28,9 @@ const RatioList = (props: Props) => {
               {row.subTitle && row.subTitle}
             </p>
           </div>
+          <div className="inline-flex items-center text-base font-semibold text-gray-900">
+            {row.render(data)}
+          </div>
         </div>
       </li>
     );
