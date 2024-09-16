@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "../../Components/Table/Table";
+import RatioList from "../../Components/RatioList/RatioList";
 
 interface Props {}
 
@@ -10,6 +11,7 @@ const DesignPage = (props: Props) => {
       <h2>
         This is the design page. This is where we will house design aspects
       </h2>
+      <RatioList />
       <Table />
     </>
   );
