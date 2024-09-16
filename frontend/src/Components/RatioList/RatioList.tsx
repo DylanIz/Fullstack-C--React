@@ -24,6 +24,9 @@ const RatioList = (props: Props) => {
             <p className="text-sm font-medium text-gray-900 truncate">
               {row.label}
             </p>
+            <p className="text-sm text-gray-500 truncate">
+              {row.subTitle && row.subTitle}
+            </p>
           </div>
         </div>
       </li>
