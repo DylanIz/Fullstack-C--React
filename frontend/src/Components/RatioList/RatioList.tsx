@@ -35,7 +35,11 @@ const RatioList = (props: Props) => {
       </li>
     );
   });
-  return <div>RatioList</div>;
+  return (
+    <div className="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+      ul.divide-y <divided-gray-200></divided-gray-200>
+    </div>
+  );
 };
 
 export default RatioList;
