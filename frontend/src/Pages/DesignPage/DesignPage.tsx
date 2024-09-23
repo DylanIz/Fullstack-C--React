@@ -22,7 +22,7 @@ const DesignPage = (props: Props) => {
         This is the design page. This is where we will house design aspects
       </h2>
       <RatioList data={testIncomeStatementData} config={tableConfig} />
-      <Table />
+      <Table data={testIncomeStatementData} config={tableConfig} />
     </>
   );
 };
