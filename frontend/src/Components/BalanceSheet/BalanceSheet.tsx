@@ -63,18 +63,18 @@ const config = [
 
 const BalanceSheet = (props: Props) => {
   const ticker = useOutletContext<string>();
-  const [companyData, setCompanyData] = useState<CompanyBalanceSheet>();
+  const [balanceSheet, setBalanceSheet] = useState<CompanyBalanceSheet>();
   useEffect(() => {
-    const getCompanyData = async () => {
-      const value = await getBalanceSheet(ticker!);
-      setCompanyData(value?.data[0]);
+    const getData = async () => {
+      const result = await getBalanceSheet(ticker!);
+      setBalanceSheet(result?.data[0]);
     };
-    getCompanyData();
+    getData();
   }, [ticker]);
   return (
     <>
-      {companyData ? (
-        <RatioList config={config} data={companyData} />
+      {balanceSheet ? (
+        <RatioList config={config} data={balanceSheet} />
       ) : (
         <>Loading...</>
       )}

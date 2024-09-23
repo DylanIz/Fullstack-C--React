@@ -72,8 +72,8 @@ function CompanyProfile({}: Props) {
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
     const getCompanyKeyMetrics = async () => {
-      const value = await getKeyMetrics(ticker);
-      setCompanyData(value?.data[0]);
+      const result = await getKeyMetrics(ticker);
+      setCompanyData(result?.data[0]);
     };
     getCompanyKeyMetrics();
   }, [ticker]);
