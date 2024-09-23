@@ -41,7 +41,7 @@ function Sidebar({}: Props) {
               className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
             >
               <BsCashCoin />
-              <h6 className="ml-3">Balance Sheet</h6>
+              <h6 className="ml-3">Cashflow Statement</h6>
             </Link>
           </div>
         </div>
