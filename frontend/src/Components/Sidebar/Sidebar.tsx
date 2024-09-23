@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaBalanceScale, FaChartBar, FaHome } from "react-icons/fa";
 
 interface Props {}
 
@@ -25,8 +25,15 @@ function Sidebar({}: Props) {
               to="income-statement"
               className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
             >
-              <FaHome />
+              <FaChartBar />
               <h6 className="ml-3">Income Statement</h6>
+            </Link>
+            <Link
+              to="balance-sheet"
+              className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+              <FaBalanceScale />
+              <h6 className="ml-3">Balance Sheet</h6>
             </Link>
           </div>
         </div>
