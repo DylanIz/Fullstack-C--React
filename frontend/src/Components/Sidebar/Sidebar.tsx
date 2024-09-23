@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBalanceScale, FaChartBar, FaHome } from "react-icons/fa";
+import { BsCashCoin } from "react-icons/bs";
 
 interface Props {}
 
@@ -33,6 +34,13 @@ function Sidebar({}: Props) {
               className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
             >
               <FaBalanceScale />
+              <h6 className="ml-3">Balance Sheet</h6>
+            </Link>
+            <Link
+              to="cashflow-statement"
+              className="flex items-center md:min-w-full text-blueGray-500 text-base uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+              <BsCashCoin />
               <h6 className="ml-3">Balance Sheet</h6>
             </Link>
           </div>
