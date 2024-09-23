@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CompanyIncomeStatement } from "../../company";
 import { useOutletContext } from "react-router-dom";
+import { getIncomeStatement } from "../../api";
+import RatioList from "../RatioList/RatioList";
 
 interface Props {}
 
@@ -61,10 +63,27 @@ const configs = [
 ];
 
 const IncomeStatement = (props: Props) => {
-  const ticker = useOutletContext();
+  const ticker = useOutletContext<string>();
   const [incomeStatement, setIncomeStatement] =
     useState<CompanyIncomeStatement[]>();
-  return <div>IncomeStatement</div>;
+  useEffect(() => {
+    const incomeStatementFetch = async () => {
+      const result = await getIncomeStatement(ticker);
+      setIncomeStatement(result!.data);
+    };
+    incomeStatementFetch();
+  }, [ticker]);
+  return (
+    <>
+      {incomeStatement ? (
+        <>
+          <RatioList data={incomeStatement} config={configs} />{" "}
+        </>
+      ) : (
+        <>Loading...</>
+      )}
+    </>
+  );
 };
 
 export default IncomeStatement;
