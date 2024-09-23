@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CompanyIncomeStatement } from "../../company";
 import { useOutletContext } from "react-router-dom";
 import { getIncomeStatement } from "../../api";
-import RatioList from "../RatioList/RatioList";
+import Table from "../Table/Table";
 
 interface Props {}
 
@@ -77,7 +77,7 @@ const IncomeStatement = (props: Props) => {
     <>
       {incomeStatement ? (
         <>
-          <RatioList data={incomeStatement} config={configs} />{" "}
+          <Table config={configs} data={incomeStatement} />{" "}
         </>
       ) : (
         <>Loading...</>
