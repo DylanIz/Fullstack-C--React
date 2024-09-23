@@ -62,7 +62,8 @@ const configs = [
 
 const IncomeStatement = (props: Props) => {
   const ticker = useOutletContext();
-  const [incomeStatement, setIncomeStatement] = useState<string>();
+  const [incomeStatement, setIncomeStatement] =
+    useState<CompanyIncomeStatement[]>();
   return <div>IncomeStatement</div>;
 };
 
