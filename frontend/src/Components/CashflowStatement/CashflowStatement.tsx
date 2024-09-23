@@ -47,12 +47,12 @@ const CashflowStatement = ({}: Props) => {
   const ticker = useOutletContext<string>();
   const [cashFlowData, setCashFlowData] = useState<CompanyCashFlow[]>();
   useEffect(() => {
-    const getRatios = async () => {
+    const getData = async () => {
       const result = await getCashFlow(ticker);
       setCashFlowData(result!.data);
     };
-    getRatios();
-  }, []);
+    getData();
+  }, [ticker]);
   return cashFlowData ? (
     <Table config={config} data={cashFlowData}></Table>
   ) : (
