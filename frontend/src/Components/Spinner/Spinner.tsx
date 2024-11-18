@@ -1,9 +1,18 @@
 import React from "react";
+import { ClipLoader } from "react-spinners";
 
-interface Props {}
+interface Props {
+  isLoading?: boolean;
+}
 
-const Spinner = (props: Props) => {
-  return <div>Spinner</div>;
+const Spinner = ({ isLoading = true }: Props) => {
+  return (
+    <>
+      <div id="loading-spinner">
+        <ClipLoader color="#36d7b7" />
+      </div>
+    </>
+  );
 };
 
 export default Spinner;
