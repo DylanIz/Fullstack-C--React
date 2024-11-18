@@ -4,8 +4,9 @@ import { CompanyCashFlow } from "../../company";
 import { getCashFlow } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinner/Spinner";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormatting";
 
-interface Props {}
+type Props = {};
 
 const config = [
   {
@@ -14,46 +15,53 @@ const config = [
   },
   {
     label: "Operating Cashflow",
-    render: (company: CompanyCashFlow) => company.operatingCashFlow,
+    render: (company: CompanyCashFlow) =>
+      formatLargeMonetaryNumber(company.operatingCashFlow),
   },
   {
     label: "Investing Cashflow",
     render: (company: CompanyCashFlow) =>
-      company.netCashUsedForInvestingActivites,
+      formatLargeMonetaryNumber(company.netCashUsedForInvestingActivites),
   },
   {
     label: "Financing Cashflow",
     render: (company: CompanyCashFlow) =>
-      company.netCashUsedProvidedByFinancingActivities,
+      formatLargeMonetaryNumber(
+        company.netCashUsedProvidedByFinancingActivities,
+      ),
   },
   {
     label: "Cash At End of Period",
-    render: (company: CompanyCashFlow) => company.cashAtEndOfPeriod,
+    render: (company: CompanyCashFlow) =>
+      formatLargeMonetaryNumber(company.cashAtEndOfPeriod),
   },
   {
     label: "CapEX",
-    render: (company: CompanyCashFlow) => company.capitalExpenditure,
+    render: (company: CompanyCashFlow) =>
+      formatLargeMonetaryNumber(company.capitalExpenditure),
   },
   {
     label: "Issuance Of Stock",
-    render: (company: CompanyCashFlow) => company.commonStockIssued,
+    render: (company: CompanyCashFlow) =>
+      formatLargeMonetaryNumber(company.commonStockIssued),
   },
   {
     label: "Free Cash Flow",
-    render: (company: CompanyCashFlow) => company.freeCashFlow,
+    render: (company: CompanyCashFlow) =>
+      formatLargeMonetaryNumber(company.freeCashFlow),
   },
 ];
 
-const CashflowStatement = ({}: Props) => {
+const CashflowStatement = (props: Props) => {
   const ticker = useOutletContext<string>();
   const [cashFlowData, setCashFlowData] = useState<CompanyCashFlow[]>();
   useEffect(() => {
-    const getData = async () => {
+    const getRatios = async () => {
       const result = await getCashFlow(ticker);
       setCashFlowData(result!.data);
     };
-    getData();
-  }, [ticker]);
+    getRatios();
+  }, []);
   return cashFlowData ? (
     <Table config={config} data={cashFlowData}></Table>
   ) : (
