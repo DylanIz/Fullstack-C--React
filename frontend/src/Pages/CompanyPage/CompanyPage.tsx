@@ -32,7 +32,7 @@ const CompanyPage = (props: Props) => {
             <Tile title="Company Name" subTitle={company.companyName}></Tile>
             <Tile
               title="Price"
-              subTitle={"$" + company.price.toString()}
+              subTitle={"$" + company.price.toFixed(2)}
             ></Tile>
             <Tile title="Company Sector" subTitle={company.sector}></Tile>
             <Tile title="DCF" subTitle={"$" + company.dcf.toFixed(2)}></Tile>
