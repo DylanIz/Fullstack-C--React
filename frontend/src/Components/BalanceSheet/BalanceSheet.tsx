@@ -4,6 +4,7 @@ import RatioList from "../RatioList/RatioList";
 import { useOutletContext } from "react-router-dom";
 import { getBalanceSheet } from "../../api";
 import Spinner from "../Spinner/Spinner";
+import "./Spinner.css";
 
 interface Props {}
 
