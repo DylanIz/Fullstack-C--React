@@ -10,7 +10,7 @@ namespace api.Data
             
         }
 
-        public DbSet<Stock> Stock { get; set; } = null!;
+        public DbSet<Stock> Stocks { get; set; } = null!;
         public DbSet<Comment> Comment { get; set; } = null!;
     }
 }

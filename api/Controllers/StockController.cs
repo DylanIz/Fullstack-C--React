@@ -1,3 +1,4 @@
+using api.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -6,6 +7,15 @@ namespace api.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        
+        private readonly ApplicationDBContext _context;
+        public StockController(ApplicationDBContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public IActionResult GetAll(){
+            var stocks = _context.Stocks.ToList();
+        }
     }
 }
