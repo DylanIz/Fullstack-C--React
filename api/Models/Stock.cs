@@ -7,6 +7,7 @@ namespace api.Models
 {
     public class Stock
     {
-        public int MyProperty { get; set; }
+        public int Id { get; set; }
+        public string Symbol { get; set; }  
     }
 }
