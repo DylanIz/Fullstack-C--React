@@ -16,6 +16,8 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult GetAll(){
             var stocks = _context.Stocks.ToList();
+
+            return Ok(stocks);
         }
     }
 }
