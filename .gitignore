@@ -1,3 +1,4 @@
 
 frontend/.env
 .vscode/settings.json
+api/appsettings.json
